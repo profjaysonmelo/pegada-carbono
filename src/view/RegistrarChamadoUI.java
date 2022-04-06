@@ -12,6 +12,8 @@ import javax.swing.JTextField;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class RegistrarChamadoUI extends JInternalFrame {
 	private JTextField txtDataChamado;
@@ -71,8 +73,18 @@ public class RegistrarChamadoUI extends JInternalFrame {
 		cbStatus.setModel(new DefaultComboBoxModel(new String[] {"EM ABERTO", "EM ANDAMENTO", "CONCLU\u00CDDO"}));
 		
 		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
 		
 		JButton btnSalvar = new JButton("Salvar");
+		btnSalvar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//TODO - Ação do botão salvar
+			}
+		});
 		
 		JLabel jlResultado = new JLabel("Resultado CO2:");
 		

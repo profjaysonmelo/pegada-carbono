@@ -11,11 +11,13 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class CadastroVeiculoUI extends JInternalFrame {
 	private JTextField txtModelo;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField txtPlaca;
+	private JTextField txtAutonomia;
 
 	/**
 	 * Launch the application.
@@ -48,8 +50,8 @@ public class CadastroVeiculoUI extends JInternalFrame {
 		
 		JLabel jlPlaca = new JLabel("Placa:");
 		
-		textField = new JTextField();
-		textField.setColumns(10);
+		txtPlaca = new JTextField();
+		txtPlaca.setColumns(10);
 		
 		JLabel jlDisponivel = new JLabel("Dispon\u00EDvel:");
 		
@@ -58,12 +60,22 @@ public class CadastroVeiculoUI extends JInternalFrame {
 		
 		JLabel jlAutonomia = new JLabel("Autonomia:");
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
+		txtAutonomia = new JTextField();
+		txtAutonomia.setColumns(10);
 		
 		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
 		
 		JButton btnSalvar = new JButton("Salvar");
+		btnSalvar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//TODO - Ação do botão Salvar
+			}
+		});
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -82,7 +94,7 @@ public class CadastroVeiculoUI extends JInternalFrame {
 							.addGroup(groupLayout.createSequentialGroup()
 								.addComponent(jlPlaca)
 								.addPreferredGap(ComponentPlacement.RELATED)
-								.addComponent(textField, GroupLayout.PREFERRED_SIZE, 123, GroupLayout.PREFERRED_SIZE)
+								.addComponent(txtPlaca, GroupLayout.PREFERRED_SIZE, 123, GroupLayout.PREFERRED_SIZE)
 								.addGap(18)
 								.addComponent(jlDisponivel)
 								.addPreferredGap(ComponentPlacement.RELATED)
@@ -90,7 +102,7 @@ public class CadastroVeiculoUI extends JInternalFrame {
 								.addPreferredGap(ComponentPlacement.UNRELATED)
 								.addComponent(jlAutonomia)
 								.addPreferredGap(ComponentPlacement.RELATED)
-								.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, 109, GroupLayout.PREFERRED_SIZE))))
+								.addComponent(txtAutonomia, GroupLayout.PREFERRED_SIZE, 109, GroupLayout.PREFERRED_SIZE))))
 					.addGap(161))
 		);
 		groupLayout.setVerticalGroup(
@@ -103,11 +115,11 @@ public class CadastroVeiculoUI extends JInternalFrame {
 					.addGap(18)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(jlPlaca)
-						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtPlaca, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(jlDisponivel)
 						.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(jlAutonomia)
-						.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(txtAutonomia, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addGap(42)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btnCancelar)
