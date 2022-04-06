@@ -1,0 +1,121 @@
+package view;
+
+import java.awt.EventQueue;
+
+import javax.swing.JInternalFrame;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+
+public class CadastroVeiculoUI extends JInternalFrame {
+	private JTextField txtModelo;
+	private JTextField textField;
+	private JTextField textField_1;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					CadastroVeiculoUI frame = new CadastroVeiculoUI();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public CadastroVeiculoUI() {
+		setClosable(true);
+		setTitle("Cadastro de Ve\u00EDculos");
+		setBounds(100, 100, 555, 179);
+		
+		JLabel jlModelo = new JLabel("Modelo:");
+		
+		txtModelo = new JTextField();
+		txtModelo.setColumns(10);
+		
+		JLabel jlPlaca = new JLabel("Placa:");
+		
+		textField = new JTextField();
+		textField.setColumns(10);
+		
+		JLabel jlDisponivel = new JLabel("Dispon\u00EDvel:");
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"SIM", "N\u00C3O"}));
+		
+		JLabel jlAutonomia = new JLabel("Autonomia:");
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		
+		JButton btnCancelar = new JButton("Cancelar");
+		
+		JButton btnSalvar = new JButton("Salvar");
+		GroupLayout groupLayout = new GroupLayout(getContentPane());
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(btnSalvar)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(btnCancelar))
+						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+							.addGroup(groupLayout.createSequentialGroup()
+								.addComponent(jlModelo)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(txtModelo))
+							.addGroup(groupLayout.createSequentialGroup()
+								.addComponent(jlPlaca)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(textField, GroupLayout.PREFERRED_SIZE, 123, GroupLayout.PREFERRED_SIZE)
+								.addGap(18)
+								.addComponent(jlDisponivel)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, 57, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.UNRELATED)
+								.addComponent(jlAutonomia)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, 109, GroupLayout.PREFERRED_SIZE))))
+					.addGap(161))
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(jlModelo)
+						.addComponent(txtModelo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(18)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(jlPlaca)
+						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(jlDisponivel)
+						.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(jlAutonomia)
+						.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(42)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(btnCancelar)
+						.addComponent(btnSalvar))
+					.addContainerGap(185, Short.MAX_VALUE))
+		);
+		getContentPane().setLayout(groupLayout);
+
+	}
+
+}
